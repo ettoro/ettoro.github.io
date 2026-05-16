@@ -1,0 +1,256 @@
+/* ─────────────────────────────────────────
+   Root & Reset
+───────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Mono:wght@300;400&display=swap');
+
+:root {
+  --bg:        #f7f5f0;
+  --ink:       #1a1814;
+  --muted:     #7a7570;
+  --accent:    #b85c38;
+  --rule:      #dedad4;
+  --max-width: 680px;
+  --gap:       2rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 18px; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'EB Garamond', Georgia, serif;
+  line-height: 1.75;
+  min-height: 100vh;
+  padding: 3rem 1.5rem 6rem;
+}
+
+/* ─────────────────────────────────────────
+   Layout
+───────────────────────────────────────── */
+.site-wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* ─────────────────────────────────────────
+   Navigation
+───────────────────────────────────────── */
+nav {
+  display: flex;
+  align-items: baseline;
+  gap: 1.75rem;
+  margin-bottom: 3.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+nav .site-name {
+  font-family: 'DM Mono', monospace;
+  font-weight: 300;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  text-decoration: none;
+  margin-right: auto;
+}
+
+nav a {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  text-decoration: none;
+  text-transform: lowercase;
+  transition: color 0.15s;
+}
+
+nav a:hover,
+nav a.active { color: var(--ink); }
+
+/* ─────────────────────────────────────────
+   Typography
+───────────────────────────────────────── */
+h1 {
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 0.25rem;
+}
+
+h2 {
+  font-size: 0.78rem;
+  font-family: 'DM Mono', monospace;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-top: 2.75rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin-bottom: 0.1rem;
+}
+
+p { margin-bottom: 1rem; }
+p:last-child { margin-bottom: 0; }
+
+em { font-style: italic; }
+
+hr {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 2rem 0;
+}
+
+/* ─────────────────────────────────────────
+   Links
+───────────────────────────────────────── */
+a {
+  color: var(--ink);
+  text-decoration-color: var(--rule);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.15s;
+}
+
+a:hover { text-decoration-color: var(--accent); color: var(--accent); }
+
+/* ─────────────────────────────────────────
+   Page header (below nav)
+───────────────────────────────────────── */
+.page-header {
+  margin-bottom: 2.5rem;
+}
+
+.page-header .subtitle {
+  font-size: 1rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ─────────────────────────────────────────
+   CV specific
+───────────────────────────────────────── */
+.cv-entry {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 0 1.5rem;
+  margin-bottom: 1.5rem;
+  align-items: start;
+}
+
+.cv-entry .period {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 300;
+  color: var(--muted);
+  padding-top: 0.22rem;
+  line-height: 1.5;
+}
+
+.cv-entry .role { font-weight: 500; }
+
+.cv-entry .where {
+  font-size: 0.88rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.cv-entry .desc {
+  font-size: 0.95rem;
+  margin-top: 0.3rem;
+  color: var(--ink);
+}
+
+/* skill pills */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+}
+
+.skill-pill {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 300;
+  padding: 0.15rem 0.55rem;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  color: var(--muted);
+}
+
+/* ─────────────────────────────────────────
+   About page
+───────────────────────────────────────── */
+.about-body p { font-size: 1.05rem; }
+
+/* ─────────────────────────────────────────
+   Journal / log pages  (books, movies, etc.)
+───────────────────────────────────────── */
+.log-entry {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.log-entry:first-of-type { border-top: 1px solid var(--rule); }
+
+.log-entry .log-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.log-entry .log-meta {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 300;
+  color: var(--muted);
+  margin-bottom: 0.35rem;
+}
+
+.log-entry .log-note {
+  font-size: 0.95rem;
+  color: var(--ink);
+  font-style: italic;
+}
+
+/* star rating */
+.stars { color: var(--accent); letter-spacing: 1px; }
+
+/* ─────────────────────────────────────────
+   Footer
+───────────────────────────────────────── */
+footer {
+  margin-top: 5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 300;
+  color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* ─────────────────────────────────────────
+   Responsive
+───────────────────────────────────────── */
+@media (max-width: 520px) {
+  html { font-size: 16px; }
+
+  .cv-entry {
+    grid-template-columns: 1fr;
+    gap: 0.1rem;
+  }
+
+  .cv-entry .period { color: var(--accent); }
+
+  nav { flex-wrap: wrap; gap: 1rem; }
+}
